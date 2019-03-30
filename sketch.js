@@ -1,46 +1,106 @@
-var sunY = 238.5;
-var sunradius = 167/2
-
+var Ldiam = 100
+var Lheight = 100
+var Mdiam = 44
+var Mheight = 44
+var mX1 = 100
+var mX2 = 390
+var mY1 = 95
+var mY2 = 385
+var lX1 = 335.5
+var lX2 = 160.5
+var lY1 = 155.5
+var lY2 = 330
 
 function setup() {
   createCanvas(500, 500);
 }
 
 function draw() {
+  background(204, 195, 20);
+
+  //Large red circles
+  fill(255,0,6);
+    //Right
+      ellipse(lX1,239,Ldiam,Lheight);
+    //Top
+      ellipse(247,lY1,Ldiam,Lheight);
+    //Left 
+      ellipse(lX2,239,Ldiam,Lheight);
+    //Bottom
+      ellipse(244,lY2,Ldiam,Lheight);
   
-  //sky
-  background(0,187,214);
+  //Medium red circles
+    //left medium circles
+      ellipse(mX1,347,Mdiam,Mheight);
+      ellipse(mX1,130,Mdiam,Mheight);
+    //right medium circles
+      ellipse(mX2,130,Mdiam,Mheight);
+      ellipse(mX2,347,Mdiam,Mheight);
+    //top medium circles
+      ellipse(355,mY1,Mdiam,Mheight);
+      ellipse(137,mY1,Mdiam,Mheight);
+    //bottom medium circles
+      ellipse(137,mY2,Mdiam,Mheight);
+      ellipse(355,mY2,Mdiam,Mheight);
+  //Blue Squares
+  fill(18,131,255);
+  rect(162,155 ,169,169);
+  rect(102,96,70,70);
+  rect(102,312,70,70);
+  rect(320,95,70,70);
+  rect(320,312,70,70);
+  rect(75,70,25,25);
+  rect(75,384,25,25);
+  rect(390,382,25,25);
+  rect(390,70,25,25);
   
-  //sun
-  fill(244,187,58)
-  stroke(248,219,148)
-  strokeWeight(14)
-  circle(322.5,sunY,sunradius)
+  //Tiny Red Circles
+   fill(255,0,6);
+  ellipse(102,96,18,18);
+  ellipse(390,95,18,18);
+  ellipse(102,382,18,18);
+  ellipse(390,382,18,18);
+
+  //Moving the medium red circles
+  mX1 = mX1-1
+  if (mX1 <= 0-Mdiam){
+    mX1=100
+  }
   
-  //ground
-  noStroke();
-  fill(176,126,9);
-  rect(0,height/2,width,height/2);
- 
+  mX2 = mX2+1
+  if (mX2 >= 490+Mdiam){
+    mX2=390
+  }
   
-  //mountain
-  fill(214,86,43)
- beginShape();
-  vertex(121, 352);
-  vertex(255.5, 81);
-  vertex(390, 352);
- endShape(CLOSE);
+  mY1 = mY1-1
+  if (mY1 <= -2-Mheight){
+    mY1=96.5
+  }
   
+  mY2 = mY2+1
+  if (mY2 >= 488+Mheight){
+    mY2=390
+  }
   
-  //sun rising
-  sunY = sunY -1;
+  //Moving the large red circles
+  lX1 = lX1+1
+  if (lX1 >= 490+Ldiam){
+    lX1=335.5
+  }
   
-  if(sunY <= 0-sunradius){
-    sunY = 500
-   }
+  lX2 = lX2-1
+  if (lX2 <= 4-Ldiam){
+    lX2=160.5
+  }
   
+  lY1 = lY1-1
+  if (lY1 <= 0-Ldiam){
+    lY1=155.5
+  }
   
-  //print(sunY)
-  
+  lY2 = lY2+1
+  if (lY2 >= 490+Ldiam){
+    lY2=335.5
+  }
   
 }
