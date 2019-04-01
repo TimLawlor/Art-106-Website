@@ -72,23 +72,24 @@ function draw() {
   ellipse(390,382,18,18);
 
   //Moving the medium red circles
+  
   mX1 = mX1-1
-  if (frameCount >= 150){
+  if (frameCount >= 160){
     mX1=135
   }
   
   mX2 = mX2+1
-  if (frameCount >= 150){
+  if (frameCount >= 160){
     mX2=350
   }
   
   mY1 = mY1-1
-  if (frameCount >= 150){
+  if (frameCount >= 160){
     mY1=135
   }
   
   mY2 = mY2+1
-  if (frameCount >= 150){
+  if (frameCount >= 160){
     mY2=350
   }
   
