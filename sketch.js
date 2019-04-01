@@ -12,12 +12,22 @@ var lY1 = 155.5
 var lY2 = 330
 
 function setup() {
+  frameRate(30);
+  textSize(30);
+  textAlign(CENTER);
+}
+
+function setup() {
   createCanvas(500, 500);
 }
 
 function draw() {
   background(204, 195, 20);
 
+  function draw() {
+   text(frameCount, width / 2, height / 2);
+}
+  
   //Large red circles
   fill(255,0,6);
     //Right
@@ -63,44 +73,50 @@ function draw() {
 
   //Moving the medium red circles
   mX1 = mX1-1
-  if (mX1 <= 0-Mdiam){
-    mX1=100
+  if (frameCount >= 150){
+    mX1=135
   }
   
   mX2 = mX2+1
-  if (mX2 >= 490+Mdiam){
-    mX2=390
+  if (frameCount >= 150){
+    mX2=350
   }
   
   mY1 = mY1-1
-  if (mY1 <= -2-Mheight){
-    mY1=96.5
+  if (frameCount >= 150){
+    mY1=135
   }
   
   mY2 = mY2+1
-  if (mY2 >= 488+Mheight){
-    mY2=390
+  if (frameCount >= 150){
+    mY2=350
   }
   
   //Moving the large red circles
   lX1 = lX1+1
-  if (lX1 >= 490+Ldiam){
-    lX1=335.5
+  if (frameCount >= 300){
+    lX1=250
   }
   
   lX2 = lX2-1
-  if (lX2 <= 4-Ldiam){
-    lX2=160.5
+  if (frameCount >= 300){
+    lX2=250
   }
   
   lY1 = lY1-1
-  if (lY1 <= 0-Ldiam){
-    lY1=155.5
+  if (frameCount >= 300){
+    lY1=250
   }
   
   lY2 = lY2+1
-  if (lY2 >= 490+Ldiam){
-    lY2=335.5
+  if (frameCount >= 300){
+    lY2=250
   }
+  
+  if(frameCount >=300){
+    frameCount=0
+  }
+  
+  //print(frameCount)
   
 }
