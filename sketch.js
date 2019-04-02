@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw() {
-  background(204, 195, 20);
+  background(102, 204, 21);
 
   function draw() {
    text(frameCount, width / 2, height / 2);
